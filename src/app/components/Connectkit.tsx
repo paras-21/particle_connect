@@ -2,6 +2,7 @@
 
 import { ConnectKitProvider, createConfig } from "@particle-network/connectkit";
 import { authWalletConnectors } from "@particle-network/connectkit/auth";
+import { aa } from '@particle-network/connectkit/aa';
 import {
   avalancheFuji,
   baseSepolia,
@@ -60,7 +61,11 @@ const config = createConfig({
     wallet({
       entryPosition: EntryPosition.TR,
       visible: true,
-    }), // optional, embedded wallet, support solana and evm chains.
+    }),
+    aa({
+      name: 'BICONOMY',
+      version: '2.0.0',
+  }),
   ],
   chains: [sepolia, baseSepolia, avalancheFuji],
 });
